@@ -1,0 +1,18 @@
+#!/bin/bash
+# Da gi otvaram site ssh sesii preku screen da mozham da si logiram se shto sum pravel.
+
+if [ -z $1 ]; then
+    /usr/bin/ssh
+    exit 1
+fi;
+
+#jusername=`echo $1 | cut -d"@" -f1`
+hostot=`echo "$*" | cut -d"@" -f2`
+
+#da go izvadam hostot za da mozham na screen da mu kazham neshto da gi krsti fajlovite
+if [ "$hostot" == "$*" ]; then
+    #nema juzer@host, poslednoto zemi go kako hostnejm
+    hostot="${!#}"
+fi;
+
+screen -L -t $hostot /usr/bin/ssh $*
