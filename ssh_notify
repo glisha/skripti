@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while [ 1=1 ]; do
+    /usr/bin/ssh -D 9698 root@serverot.doma.com -p 443 
+    notify-send --urgency=critical --expire-time=30 "ssh" "Се изгаси."
+    sleep 20
+done;
+
