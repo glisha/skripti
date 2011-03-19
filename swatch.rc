@@ -1,0 +1,16 @@
+#
+# Vo syslog arpwatch zapishuva koja e nova mac adresa na mrezhata i koja IP adresa si
+# ja smenila MAC adresata od posleden pat koga sum ja videl
+#
+# So swatch go gledam syslog i so notify-send mi pushta izvestuvanja
+#
+#swatch --config-file=swatch.rc --tail-file=/var/log/syslog
+#
+
+watchfor /arpwatch: flip flop/
+    echo
+    exec notify-send -t 1000 "$_"
+
+watchfor /arpwatch: changed ethernet address/
+    echo
+    exec notify-send -t 1000 "$_"
