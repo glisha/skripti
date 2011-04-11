@@ -1,11 +1,7 @@
-#.screenrc
-# sekoja nova ssh sesija ja otvaram so screen za da si logiram se shto sum pravel
-# mesto /usr/bin/ssh imam alias ssh=~/ssh_so_screen
-
 term xterm
 #da mi gi logira site ssh sesii vo poedinechen fajl
 #logfile	/home/georgis/screen_logovi/%t_%Y%m%d.%n
-logfile    /home/georgis/screen_logovi/%t_%Y%m%d_%c.%n
+logfile    /home/georgis/screen_logovi/%t_%Y%m%d_%0c.%n
 deflog on
 logtstamp on
 startup_message off
@@ -20,3 +16,4 @@ hardstatus on
 hardstatus alwayslastline
 hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
 
+defscrollback 9000
