@@ -21,7 +21,7 @@ import smtplib
 import hashlib
 from email.MIMEText import MIMEText
 
-class CHECK_FOR_CHANGES:
+class CheckForChanges:
     def __init__(self,url,toaddrs):
         self.url = url
         self.toaddrs = toaddrs
@@ -41,7 +41,7 @@ class CHECK_FOR_CHANGES:
 
         # Credentials (if needed)
         username = 'glishaalerts'
-        password = 'glishaalerts123'
+        password = 'IH6geL6s'
 
         # The actual mail send
         server = smtplib.SMTP('smtp.gmail.com:587')
@@ -96,5 +96,5 @@ if __name__=='__main__':
         ]
 
     for url,email in urls:
-        hatta = CHECK_FOR_CHANGES(url,email)
+        hatta = CheckForChanges(url,email)
         hatta.check()
